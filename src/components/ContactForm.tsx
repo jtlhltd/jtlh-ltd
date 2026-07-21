@@ -46,7 +46,7 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="mt-10 border border-accent/40 bg-background/40 px-6 py-8">
+      <div className="mt-10 border border-accent/40 bg-background/40 px-6 py-8 lg:mt-0">
         <p className="font-display text-lg font-semibold text-accent">Message sent</p>
         <p className="mt-2 text-muted">
           Thanks — we will get back to you shortly.
@@ -63,7 +63,12 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-10 grid max-w-xl gap-5" noValidate>
+    <form
+      id="contact-form"
+      onSubmit={onSubmit}
+      className="mt-10 grid max-w-xl gap-5 lg:mt-0 lg:max-w-none"
+      noValidate
+    >
       {/* Honeypot */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>

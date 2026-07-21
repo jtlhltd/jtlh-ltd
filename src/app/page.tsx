@@ -3,6 +3,21 @@ import { Logo, LogoMark } from "@/components/Logo";
 
 const EMAIL = "jtlhltd@gmail.com";
 
+const problems = [
+  {
+    title: "Work still runs on people",
+    body: "The same emails, admin, follow-ups, and lookups get done by hand every day — so growth just means more firefighting.",
+  },
+  {
+    title: "Tools don’t talk to each other",
+    body: "CRM, inbox, docs, and spreadsheets each hold part of the truth. Staff become the integration layer.",
+  },
+  {
+    title: "Off-the-shelf AI doesn’t fit",
+    body: "Generic chatbots and plugins ignore how your business actually operates. DIY projects stall before they reach production.",
+  },
+];
+
 const buildExamples = [
   {
     title: "Knowledge & reporting",
@@ -25,7 +40,7 @@ const buildExamples = [
 const process = [
   {
     title: "Audit",
-    body: "We review how work actually runs — tools, handoffs, and where time leaks — then lock written scope and success metrics.",
+    body: "We map how work actually runs — tools, handoffs, and where time leaks — then lock written scope and success metrics with you.",
   },
   {
     title: "Build & integrate",
@@ -37,10 +52,73 @@ const process = [
   },
 ];
 
+const timeline = [
+  {
+    label: "Week 1",
+    title: "Audit & scope lock",
+    body: "Access, walkthroughs, written scope for system one, and the metric that proves it worked.",
+  },
+  {
+    label: "Weeks 2–4",
+    title: "Build to production",
+    body: "Design, integrate, test with real data, and put the first system live for your team to use.",
+  },
+  {
+    label: "Ongoing",
+    title: "Run & expand",
+    body: "Monitoring, fixes, and the next bottleneck — so the operation gets more systemised over time.",
+  },
+];
+
+const differences = [
+  {
+    title: "We build real software",
+    body: "Production apps and integrations on a serious stack — not no-code glue that falls over when the business gets busy.",
+  },
+  {
+    title: "We own it end-to-end",
+    body: "Design, build, host, and run. Your team uses the system; we keep it alive. No half-finished handoff.",
+  },
+  {
+    title: "We start with one bottleneck",
+    body: "One agreed system first, measured, live. Then we expand. No multi-year transformation theatre.",
+  },
+];
+
+const notThis = [
+  "Strategy decks with no build",
+  "Chatbot demos that never leave staging",
+  "Tools dumped on your team to maintain",
+  "Vague “AI transformation” retainers with no scope",
+];
+
 const fitPoints = [
   "You already run on real tools — email, CRM, docs, spreadsheets, or internal software",
   "Too much work still depends on people doing the same tasks by hand",
   "You want a system built and owned end-to-end — not another tool for your team to maintain",
+];
+
+const faqs = [
+  {
+    q: "What kinds of businesses do you work with?",
+    a: "Industry-agnostic. Fit is operational: you have real tools and repeatable work that software and AI can take over. If there isn’t something concrete to build or integrate, we won’t take it on.",
+  },
+  {
+    q: "Do you just advise, or do you build?",
+    a: "Both, in that order. The audit decides what to build. Then we design, ship, host, and run the system. Advice without delivery isn’t the engagement.",
+  },
+  {
+    q: "What does “live in 30 days” mean?",
+    a: "After kickoff and scope lock, the first agreed system is deployed, connected to the agreed tools and data, and usable by your team for that job — not a demo or staging-only prototype. If we miss that, you get a full refund of month one.",
+  },
+  {
+    q: "Who hosts and maintains the systems?",
+    a: "We do. Hosting is included in the engagement. We monitor, fix, and improve — then expand into the next bottleneck once the first system is solid.",
+  },
+  {
+    q: "Will this replace our existing tools?",
+    a: "Usually no. We integrate into what you already use wherever that is the right call. Sometimes we build a custom layer or internal app when the stack can’t stretch that far.",
+  },
 ];
 
 export default function Home() {
@@ -51,12 +129,24 @@ export default function Home() {
           <a href="#top" className="text-lg text-foreground transition-opacity hover:opacity-80 sm:text-xl">
             <Logo />
           </a>
-          <nav className="flex items-center gap-5 sm:gap-8">
+          <nav className="flex items-center gap-4 sm:gap-7">
+            <a
+              href="#what-we-build"
+              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent md:inline"
+            >
+              Systems
+            </a>
             <a
               href="#how-it-works"
               className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent sm:inline"
             >
-              How it works
+              Process
+            </a>
+            <a
+              href="#faq"
+              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent lg:inline"
+            >
+              FAQ
             </a>
             <a
               href="#contact"
@@ -88,7 +178,7 @@ export default function Home() {
 
             <p className="animate-rise-delay-1 mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               We audit your operation, build the automations, then host and run
-              them for you — on a monthly retainer from £3,000.
+              them — so manual work leaves your team and the system keeps running.
             </p>
 
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
@@ -105,10 +195,10 @@ export default function Home() {
                 </span>
               </a>
               <a
-                href="#what-we-do"
+                href="#problem"
                 className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
               >
-                See what we build
+                Why this exists
               </a>
             </div>
           </div>
@@ -118,27 +208,99 @@ export default function Home() {
           <div className="slant-rule" />
         </div>
 
-        <section id="what-we-do" className="px-6 py-20 sm:px-8 sm:py-28">
+        <section id="problem" className="scroll-mt-8 px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              The problem
+            </p>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              Most businesses aren’t systemised — they’re held together by people.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              That’s fine until volume rises. Then the same work multiplies, hiring
+              becomes the only lever, and founders stay stuck in the weeds.
+            </p>
+
+            <ul className="mt-14 grid gap-10 border-t border-line pt-12 sm:grid-cols-3 sm:gap-8">
+              {problems.map((item) => (
+                <li key={item.title}>
+                  <LogoMark className="h-5 w-auto text-accent" />
+                  <h3 className="font-display mt-5 text-xl font-semibold tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted">{item.body}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="what-we-do" className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               What we do
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              AI systems integration — not strategy decks.
+              Bespoke AI systems integration — end to end.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              JTLH LTD goes into businesses and builds bespoke AI around how you
-              already operate. If the work is repeatable and fixable with software
-              and AI, we take it on. If it isn’t, we say so.
-            </p>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              You don’t get a chatbot demo and a slide pack. You get production
-              systems — designed, integrated, hosted, and run by us.
-            </p>
+            <div className="mt-5 grid max-w-4xl gap-4 text-base leading-relaxed text-muted sm:text-lg">
+              <p>
+                JTLH LTD goes into businesses and builds AI around how you already
+                operate. Email automation, knowledge and reporting, CRM layers,
+                internal tools, custom apps — whatever the bottleneck needs.
+              </p>
+              <p>
+                If the work is repeatable and fixable with software and AI, we take
+                it on. If it isn’t, we say so. You don’t get a chatbot demo and a
+                slide pack. You get production systems — designed, integrated,
+                hosted, and run by us.
+              </p>
+            </div>
+
+            <div className="mt-14 grid gap-8 border border-accent/25 bg-surface px-6 py-10 sm:grid-cols-2 sm:px-10 sm:py-12">
+              <div>
+                <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                  What you get
+                </p>
+                <ul className="mt-6 space-y-4 text-base leading-snug">
+                  <li className="flex gap-3">
+                    <span className="text-accent" aria-hidden="true">
+                      →
+                    </span>
+                    Audit of where time and money leak
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent" aria-hidden="true">
+                      →
+                    </span>
+                    A live AI system in your stack
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent" aria-hidden="true">
+                      →
+                    </span>
+                    Hosting, monitoring, and ongoing expansion
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-display text-xs font-semibold tracking-[0.2em] text-muted uppercase">
+                  What you don’t get
+                </p>
+                <ul className="mt-6 space-y-4 text-base leading-snug text-muted">
+                  {notThis.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span aria-hidden="true">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="what-we-build" className="scroll-mt-8 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               What we build
@@ -147,7 +309,8 @@ export default function Home() {
               Whatever your bottleneck needs.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Scope is locked after the audit. Common systems include:
+              Scope is locked after the audit. These are the systems we ship most
+              often — each one tailored to your workflows, not a template.
             </p>
 
             <ul className="mt-14 space-y-0 border-t border-line">
@@ -173,7 +336,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="relative overflow-x-clip border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="how-it-works" className="scroll-mt-8 relative overflow-x-clip border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               How it works
@@ -182,8 +345,8 @@ export default function Home() {
               Audit. Automate. Run.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Setup is included in the retainer — month one covers the audit and
-              your first live system. No separate build invoice.
+              Setup is included in the engagement. Month one covers the audit and
+              your first live system — then we keep building from there.
             </p>
 
             <ol className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
@@ -201,6 +364,56 @@ export default function Home() {
                 </li>
               ))}
             </ol>
+
+            <div className="mt-16 border-t border-line pt-14">
+              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                First 30 days
+              </p>
+              <h3 className="font-display mt-4 max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
+                From kickoff to a system your team can use.
+              </h3>
+              <ul className="mt-10 space-y-0 border-t border-line">
+                {timeline.map((item) => (
+                  <li
+                    key={item.label}
+                    className="grid gap-2 border-b border-line py-7 sm:grid-cols-[8rem_1fr] sm:gap-10"
+                  >
+                    <p className="font-display text-sm tracking-[0.12em] text-accent uppercase">
+                      {item.label}
+                    </p>
+                    <div>
+                      <h4 className="font-display text-lg font-semibold tracking-tight">
+                        {item.title}
+                      </h4>
+                      <p className="mt-2 text-base leading-relaxed text-muted">
+                        {item.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              Why JTLH
+            </p>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              Built like a product team, engaged like an operator.
+            </h2>
+            <ul className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {differences.map((item) => (
+                <li key={item.title} className="border-t border-line pt-6">
+                  <h3 className="font-display text-xl font-semibold tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted">{item.body}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -208,20 +421,20 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
               <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                Engagement
+                Guarantee
               </p>
               <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-                Monthly retainer. First system live in 30 days.
+                First system live in 30 days — or month one back.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
-                From <span className="text-foreground">£3,000/month</span>,
-                adjusted to business size. After kickoff and scope lock, your
-                first agreed AI system goes live in production within 30 days —
-                or you get a full refund of month one.
+                After kickoff and scope lock, your first agreed AI system goes live
+                in production within 30 days. If we don’t ship what we agreed, you
+                get a full refund of month one.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
                 Live means deployed, connected to the agreed tools and data, and
-                usable by your team for the agreed job — not a demo.
+                usable by your team for the agreed job — not a demo. The clock
+                pauses if access, data, or decisions are delayed on your side.
               </p>
             </div>
 
@@ -238,39 +451,87 @@ export default function Home() {
                 ))}
               </ul>
               <p className="mt-8 border-t border-line pt-6 text-sm leading-relaxed text-muted">
-                Industry-agnostic. If there isn’t something concrete to build or
-                integrate, we won’t take the engagement.
+                Monthly engagement. We keep ownership of hosting and delivery so
+                the system stays a working part of the business — not a project
+                that dies after launch.
               </p>
             </div>
           </div>
         </section>
 
+        <section id="faq" className="scroll-mt-8 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              FAQ
+            </p>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              Straight answers.
+            </h2>
+            <ul className="mt-14 space-y-0 border-t border-line">
+              {faqs.map((item) => (
+                <li key={item.q} className="border-b border-line py-8 sm:py-10">
+                  <h3 className="font-display max-w-3xl text-xl font-semibold tracking-tight sm:text-2xl">
+                    {item.q}
+                  </h3>
+                  <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+                    {item.a}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <section id="contact" className="scroll-mt-8 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
           <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
-            <div className="relative z-10">
-              <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto opacity-[0.18] sm:h-40" />
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                Contact
-              </p>
-              <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-                Tell us where the work is stuck.
-              </h2>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-                Share the bottleneck — email, reporting, CRM, ops, or something
-                unique to your business. We’ll reply with whether it’s a fit and
-                what a first system could look like.
-              </p>
+            <div className="relative z-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+              <div>
+                <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto opacity-[0.12] sm:h-40 lg:hidden" />
+                <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                  Contact
+                </p>
+                <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
+                  Tell us where the work is stuck.
+                </h2>
+                <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+                  Share the bottleneck — email, reporting, CRM, ops, or something
+                  unique to your business. We’ll reply with whether it’s a fit and
+                  what a first system could look like.
+                </p>
+                <p className="mt-8 text-sm text-muted">
+                  Prefer email directly?{" "}
+                  <a href={`mailto:${EMAIL}`} className="text-accent transition-colors hover:text-[#f0d084]">
+                    {EMAIL}
+                  </a>
+                </p>
+              </div>
               <ContactForm />
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-line px-6 py-8 sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <footer className="border-t border-line px-6 py-10 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="text-sm text-muted">
             <Logo className="text-base text-foreground" />
-            <p className="mt-3">Bespoke AI systems integration.</p>
+            <p className="mt-3 max-w-sm">
+              Bespoke AI systems integration — audit, build, host, and run.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            <a href="#what-we-do" className="text-muted transition-colors hover:text-accent">
+              What we do
+            </a>
+            <a href="#how-it-works" className="text-muted transition-colors hover:text-accent">
+              Process
+            </a>
+            <a href="#faq" className="text-muted transition-colors hover:text-accent">
+              FAQ
+            </a>
+            <a href="#contact" className="text-muted transition-colors hover:text-accent">
+              Contact
+            </a>
           </div>
           <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
             <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent">

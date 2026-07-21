@@ -17,12 +17,12 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "JTLH LTD — Bespoke AI Systems Integration",
   description:
-    "JTLH LTD builds bespoke AI systems into your business, hosts them, and runs them on a monthly retainer from £3,000. First system live in 30 days.",
+    "JTLH LTD builds bespoke AI systems into your business, hosts them, and runs them. Audit, automate, and keep systems live — first system in 30 days.",
   metadataBase: new URL("https://jtlh-ltd-web.onrender.com"),
   openGraph: {
     title: "JTLH LTD — Bespoke AI Systems Integration",
     description:
-      "Audit, automate, and run AI systems inside your business — hosting included. From £3,000/month.",
+      "Audit, automate, and run AI systems inside your business — hosting included. First system live in 30 days.",
     type: "website",
     locale: "en_GB",
   },
