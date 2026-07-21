@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "JTLH LTD — AI Consultation & Integration",
   description:
     "JTLH LTD helps businesses adopt and integrate AI practically — strategy, systems, and implementation that deliver real outcomes.",
-  metadataBase: new URL("https://jtlh-ltd.onrender.com"),
+  metadataBase: new URL("https://jtlh-ltd-web.onrender.com"),
   openGraph: {
     title: "JTLH LTD — AI Consultation & Integration",
     description:
