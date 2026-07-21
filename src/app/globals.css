@@ -5,9 +5,11 @@
   --foreground: #f4f4f4;
   --muted: #a3a3a3;
   --line: rgba(255, 255, 255, 0.12);
-  --accent: #ffffff;
+  --accent: #c6a15b;
+  --accent-soft: rgba(198, 161, 91, 0.14);
+  --accent-deep: #9a7a3c;
   --surface: #0c0c0c;
-  --glow: rgba(255, 255, 255, 0.04);
+  --glow: rgba(198, 161, 91, 0.08);
 }
 
 @theme inline {
@@ -16,6 +18,8 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
   --color-surface: var(--surface);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
@@ -36,8 +40,8 @@ body {
 }
 
 ::selection {
-  background: #fff;
-  color: #000;
+  background: var(--accent);
+  color: #0a0a0a;
 }
 
 @keyframes rise {
@@ -94,8 +98,8 @@ body {
 
 .bg-atmosphere {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.07), transparent 55%),
-    radial-gradient(ellipse 40% 30% at 90% 20%, rgba(255, 255, 255, 0.03), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(198, 161, 91, 0.1), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 90% 20%, rgba(198, 161, 91, 0.05), transparent 50%),
     linear-gradient(180deg, #050505 0%, #0a0a0a 45%, #050505 100%);
 }
 
@@ -111,6 +115,26 @@ body {
 
 .slant-rule {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(198, 161, 91, 0.15) 20%,
+    var(--accent) 50%,
+    rgba(198, 161, 91, 0.15) 80%,
+    transparent
+  );
   transform: skewX(-12deg);
+}
+
+.btn-gold {
+  background: var(--accent);
+  color: #0a0a0a;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease;
+}
+
+.btn-gold:hover {
+  background: #d4b56e;
+  transform: translateY(-2px);
 }

@@ -7,7 +7,7 @@ export function Logo({ className = "", markClassName = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-4 text-foreground ${className}`}>
       <svg
-        className={`h-[1.15em] w-auto shrink-0 ${markClassName}`}
+        className={`h-[1.15em] w-auto shrink-0 text-accent ${markClassName}`}
         viewBox="0 0 124 72"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

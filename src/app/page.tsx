@@ -34,7 +34,7 @@ export default function Home() {
           </a>
           <a
             href={MAILTO}
-            className="font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-foreground sm:text-sm"
+            className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#d4b56e] sm:text-sm"
           >
             Contact
           </a>
@@ -48,7 +48,7 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 opacity-[0.07]"
             aria-hidden="true"
           >
-            <LogoMark className="absolute -right-[8%] top-[18%] h-[55vh] w-auto text-white sm:h-[62vh]" />
+            <LogoMark className="absolute -right-[8%] top-[18%] h-[55vh] w-auto text-accent sm:h-[62vh]" />
           </div>
 
           <div className="relative mx-auto w-full max-w-6xl">
@@ -68,7 +68,7 @@ export default function Home() {
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
               <a
                 href={MAILTO}
-                className="group inline-flex items-center gap-3 bg-foreground px-7 py-3.5 font-display text-sm font-semibold tracking-wide text-background transition-transform duration-300 hover:-translate-y-0.5"
+                className="btn-gold group inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
               >
                 Get in touch
                 <span
@@ -80,7 +80,7 @@ export default function Home() {
               </a>
               <a
                 href="#what-we-do"
-                className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-foreground"
+                className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
               >
                 What we do
               </a>
@@ -95,7 +95,7 @@ export default function Home() {
         {/* What we do */}
         <section id="what-we-do" className="px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <p className="font-display text-xs font-semibold tracking-[0.2em] text-muted uppercase">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               What we do
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
@@ -114,7 +114,7 @@ export default function Home() {
                   className="grid gap-3 border-b border-line py-8 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] sm:gap-10 sm:py-10"
                 >
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display text-xs tracking-[0.16em] text-muted">
+                    <span className="font-display text-xs tracking-[0.16em] text-accent">
                       0{index + 1}
                     </span>
                     <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="absolute inset-x-0 top-0 h-px bg-line" />
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             <div>
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-muted uppercase">
+              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
                 How we help
               </p>
               <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
@@ -152,7 +152,7 @@ export default function Home() {
             <ul className="flex flex-col justify-center gap-6">
               {outcomes.map((item) => (
                 <li key={item} className="flex gap-4 text-base leading-snug sm:text-lg">
-                  <LogoMark className="mt-1 h-5 w-auto shrink-0 text-foreground" />
+                  <LogoMark className="mt-1 h-5 w-auto shrink-0 text-accent" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -162,10 +162,10 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="px-6 pb-24 sm:px-8 sm:pb-32">
-          <div className="mx-auto max-w-6xl overflow-hidden border border-line bg-surface px-8 py-14 sm:px-14 sm:py-20">
+          <div className="mx-auto max-w-6xl overflow-hidden border border-accent/25 bg-surface px-8 py-14 sm:px-14 sm:py-20">
             <div className="relative">
-              <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto text-foreground opacity-[0.06] sm:h-40" />
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-muted uppercase">
+              <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto text-accent opacity-[0.12] sm:h-40" />
+              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
                 Contact
               </p>
               <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
@@ -177,7 +177,7 @@ export default function Home() {
               </p>
               <a
                 href={MAILTO}
-                className="mt-10 inline-flex items-center gap-3 bg-foreground px-7 py-3.5 font-display text-sm font-semibold tracking-wide text-background transition-transform duration-300 hover:-translate-y-0.5"
+                className="btn-gold mt-10 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
               >
                 Email {EMAIL}
                 <span aria-hidden="true">→</span>
@@ -194,7 +194,7 @@ export default function Home() {
             <p className="mt-3">AI consultation &amp; integration.</p>
           </div>
           <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
-            <a href={MAILTO} className="transition-colors hover:text-foreground">
+            <a href={MAILTO} className="transition-colors hover:text-accent">
               {EMAIL}
             </a>
             <p>© {new Date().getFullYear()} JTLH LTD</p>

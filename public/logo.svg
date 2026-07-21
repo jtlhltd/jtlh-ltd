@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" fill="none" role="img" aria-label="JTLH LTD">
-  <path d="M0 72H28V36L0 72Z" fill="#FFFFFF"/>
-  <path d="M36 72H72V18L36 72Z" fill="#FFFFFF"/>
-  <path d="M80 72H124V0L80 72Z" fill="#FFFFFF"/>
+  <path d="M0 72H28V36L0 72Z" fill="#C6A15B"/>
+  <path d="M36 72H72V18L36 72Z" fill="#C6A15B"/>
+  <path d="M80 72H124V0L80 72Z" fill="#C6A15B"/>
   <text x="148" y="54" fill="#FFFFFF" font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="2">JTLH LTD</text>
 </svg>
