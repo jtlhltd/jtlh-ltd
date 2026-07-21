@@ -1,7 +1,5 @@
+import { ContactActions, EMAIL, GMAIL } from "@/components/ContactActions";
 import { Logo, LogoMark } from "@/components/Logo";
-
-const EMAIL = "jtlhltd@gmail.com";
-const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Enquiry via JTLH LTD website")}`;
 
 const services = [
   {
@@ -33,8 +31,8 @@ export default function Home() {
             <Logo />
           </a>
           <a
-            href={MAILTO}
-            className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#d4b56e] sm:text-sm"
+            href="#contact"
+            className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#f0d084] sm:text-sm"
           >
             Contact
           </a>
@@ -42,16 +40,15 @@ export default function Home() {
       </header>
 
       <main id="top">
-        {/* Hero — brand first, one headline, one line, one CTA */}
         <section className="relative flex min-h-[100svh] flex-col justify-end px-6 pb-16 pt-28 sm:px-8 sm:pb-24">
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.07]"
+            className="pointer-events-none absolute inset-0 opacity-[0.12]"
             aria-hidden="true"
           >
-            <LogoMark className="absolute -right-[8%] top-[18%] h-[55vh] w-auto text-accent sm:h-[62vh]" />
+            <LogoMark className="absolute -right-[8%] top-[18%] h-[55vh] w-auto sm:h-[62vh]" />
           </div>
 
-          <div className="relative mx-auto w-full max-w-6xl">
+          <div className="relative z-10 mx-auto w-full max-w-6xl">
             <div className="animate-mark mb-10 text-4xl text-foreground sm:mb-14 sm:text-5xl md:text-6xl lg:text-7xl">
               <Logo />
             </div>
@@ -67,7 +64,7 @@ export default function Home() {
 
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
               <a
-                href={MAILTO}
+                href="#contact"
                 className="btn-gold group inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
               >
                 Get in touch
@@ -92,7 +89,6 @@ export default function Home() {
           <div className="slant-rule" />
         </div>
 
-        {/* What we do */}
         <section id="what-we-do" className="px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
@@ -130,7 +126,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How we help */}
         <section className="relative px-6 py-20 sm:px-8 sm:py-28">
           <div className="absolute inset-x-0 top-0 h-px bg-line" />
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
@@ -152,7 +147,7 @@ export default function Home() {
             <ul className="flex flex-col justify-center gap-6">
               {outcomes.map((item) => (
                 <li key={item} className="flex gap-4 text-base leading-snug sm:text-lg">
-                  <LogoMark className="mt-1 h-5 w-auto shrink-0 text-accent" />
+                  <LogoMark className="mt-1 h-5 w-auto shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -160,11 +155,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact" className="px-6 pb-24 sm:px-8 sm:pb-32">
-          <div className="mx-auto max-w-6xl overflow-hidden border border-accent/25 bg-surface px-8 py-14 sm:px-14 sm:py-20">
-            <div className="relative">
-              <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto text-accent opacity-[0.12] sm:h-40" />
+        <section id="contact" className="scroll-mt-8 px-6 pb-24 sm:px-8 sm:pb-32">
+          <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
+            <div className="relative z-10">
+              <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto opacity-[0.18] sm:h-40" />
               <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
                 Contact
               </p>
@@ -175,13 +169,7 @@ export default function Home() {
                 Tell us what you are trying to achieve. We will reply with a
                 clear next step — no hard sell, no buzzword fog.
               </p>
-              <a
-                href={MAILTO}
-                className="btn-gold mt-10 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
-              >
-                Email {EMAIL}
-                <span aria-hidden="true">→</span>
-              </a>
+              <ContactActions className="mt-10" />
             </div>
           </div>
         </section>
@@ -194,7 +182,12 @@ export default function Home() {
             <p className="mt-3">AI consultation &amp; integration.</p>
           </div>
           <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
-            <a href={MAILTO} className="transition-colors hover:text-accent">
+            <a
+              href={GMAIL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-accent"
+            >
               {EMAIL}
             </a>
             <p>© {new Date().getFullYear()} JTLH LTD</p>

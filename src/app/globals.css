@@ -5,11 +5,11 @@
   --foreground: #f4f4f4;
   --muted: #a3a3a3;
   --line: rgba(255, 255, 255, 0.12);
-  --accent: #c6a15b;
-  --accent-soft: rgba(198, 161, 91, 0.14);
-  --accent-deep: #9a7a3c;
+  --accent: #e8c36a;
+  --accent-soft: rgba(232, 195, 106, 0.16);
+  --accent-deep: #c6a15b;
   --surface: #0c0c0c;
-  --glow: rgba(198, 161, 91, 0.08);
+  --glow: rgba(232, 195, 106, 0.1);
 }
 
 @theme inline {
@@ -98,8 +98,8 @@ body {
 
 .bg-atmosphere {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(198, 161, 91, 0.1), transparent 55%),
-    radial-gradient(ellipse 40% 30% at 90% 20%, rgba(198, 161, 91, 0.05), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232, 195, 106, 0.14), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 90% 20%, rgba(232, 195, 106, 0.07), transparent 50%),
     linear-gradient(180deg, #050505 0%, #0a0a0a 45%, #050505 100%);
 }
 
@@ -114,27 +114,30 @@ body {
 }
 
 .slant-rule {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(198, 161, 91, 0.15) 20%,
-    var(--accent) 50%,
-    rgba(198, 161, 91, 0.15) 80%,
+    rgba(232, 195, 106, 0.25) 20%,
+    #e8c36a 50%,
+    rgba(232, 195, 106, 0.25) 80%,
     transparent
   );
   transform: skewX(-12deg);
 }
 
 .btn-gold {
-  background: var(--accent);
+  background: #e8c36a;
   color: #0a0a0a;
   transition:
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.25s ease;
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 0 0 1px rgba(232, 195, 106, 0.35);
 }
 
 .btn-gold:hover {
-  background: #d4b56e;
+  background: #f0d084;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 195, 106, 0.22);
 }
