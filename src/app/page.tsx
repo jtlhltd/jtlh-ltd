@@ -3,25 +3,44 @@ import { Logo, LogoMark } from "@/components/Logo";
 
 const EMAIL = "jtlhltd@gmail.com";
 
-const services = [
+const buildExamples = [
   {
-    title: "AI consultation",
-    body: "We help you cut through the noise — identify where AI creates value in your business, and where it does not.",
+    title: "Knowledge & reporting",
+    body: "RAG systems over your docs, specs, and data so teams get accurate answers and reports without digging through folders.",
   },
   {
-    title: "Integration",
-    body: "We connect AI into the tools and workflows you already use, so new capability lands in day-to-day operations.",
+    title: "Email & workflow automation",
+    body: "Inbound handling, follow-ups, routing, and admin that currently eats hours — wired into the tools you already use.",
   },
   {
-    title: "Implementation",
-    body: "From prototype to production: practical builds, clear handovers, and systems your team can actually run.",
+    title: "CRM & internal tools",
+    body: "Custom CRMs, AI on top of your existing CRM, booking flows, dashboards, and ops apps built around how you actually work.",
+  },
+  {
+    title: "Bespoke AI systems",
+    body: "Anything concrete we can design, build, host, and run — not a ChatGPT wrapper, a production system inside your business.",
   },
 ];
 
-const outcomes = [
-  "Clarity on what to build — and what to skip",
-  "AI wired into real processes, not slide decks",
-  "Partners who stay accountable from advice through delivery",
+const process = [
+  {
+    title: "Audit",
+    body: "We review how work actually runs — tools, handoffs, and where time leaks — then lock written scope and success metrics.",
+  },
+  {
+    title: "Build & integrate",
+    body: "We ship the first agreed system into your stack: connected to your data and usable by your team for the job we scoped.",
+  },
+  {
+    title: "Host & run",
+    body: "We keep it live, monitored, and improving. Hosting is included. Month by month we expand what the system covers.",
+  },
+];
+
+const fitPoints = [
+  "You already run on real tools — email, CRM, docs, spreadsheets, or internal software",
+  "Too much work still depends on people doing the same tasks by hand",
+  "You want a system built and owned end-to-end — not another tool for your team to maintain",
 ];
 
 export default function Home() {
@@ -32,12 +51,20 @@ export default function Home() {
           <a href="#top" className="text-lg text-foreground transition-opacity hover:opacity-80 sm:text-xl">
             <Logo />
           </a>
-          <a
-            href="#contact"
-            className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#f0d084] sm:text-sm"
-          >
-            Contact
-          </a>
+          <nav className="flex items-center gap-5 sm:gap-8">
+            <a
+              href="#how-it-works"
+              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent sm:inline"
+            >
+              How it works
+            </a>
+            <a
+              href="#contact"
+              className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#f0d084] sm:text-sm"
+            >
+              Contact
+            </a>
+          </nav>
         </div>
       </header>
 
@@ -56,12 +83,12 @@ export default function Home() {
             </div>
 
             <h1 className="animate-rise font-display max-w-3xl text-3xl leading-[1.1] font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              AI consultation and integration that ships.
+              Bespoke AI systems, built into your business.
             </h1>
 
             <p className="animate-rise-delay-1 mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              We help organisations adopt AI with clear strategy, careful
-              integration, and implementation that holds up in the real world.
+              We audit your operation, build the automations, then host and run
+              them for you — on a monthly retainer from £3,000.
             </p>
 
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
@@ -69,7 +96,7 @@ export default function Home() {
                 href="#contact"
                 className="btn-gold group inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
               >
-                Get in touch
+                Start a conversation
                 <span
                   aria-hidden="true"
                   className="inline-block transition-transform duration-300 group-hover:translate-x-1"
@@ -81,7 +108,7 @@ export default function Home() {
                 href="#what-we-do"
                 className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
               >
-                What we do
+                See what we build
               </a>
             </div>
           </div>
@@ -97,18 +124,36 @@ export default function Home() {
               What we do
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              From AI ambition to working capability.
+              AI systems integration — not strategy decks.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              JTLH LTD partners with businesses that want AI to do useful work —
-              not generate more meetings. We advise, design the join between
-              people and systems, then help you put it live.
+              JTLH LTD goes into businesses and builds bespoke AI around how you
+              already operate. If the work is repeatable and fixable with software
+              and AI, we take it on. If it isn’t, we say so.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              You don’t get a chatbot demo and a slide pack. You get production
+              systems — designed, integrated, hosted, and run by us.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              What we build
+            </p>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              Whatever your bottleneck needs.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              Scope is locked after the audit. Common systems include:
             </p>
 
-            <ul className="mt-16 space-y-0 border-t border-line">
-              {services.map((service, index) => (
+            <ul className="mt-14 space-y-0 border-t border-line">
+              {buildExamples.map((item, index) => (
                 <li
-                  key={service.title}
+                  key={item.title}
                   className="grid gap-3 border-b border-line py-8 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] sm:gap-10 sm:py-10"
                 >
                   <div className="flex items-baseline gap-4">
@@ -116,11 +161,11 @@ export default function Home() {
                       0{index + 1}
                     </span>
                     <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
-                      {service.title}
+                      {item.title}
                     </h3>
                   </div>
                   <p className="text-base leading-relaxed text-muted sm:pt-1">
-                    {service.body}
+                    {item.body}
                   </p>
                 </li>
               ))}
@@ -128,32 +173,75 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-x-clip px-6 py-20 sm:px-8 sm:py-28">
-          <div className="absolute inset-x-0 top-0 h-px bg-line" />
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+        <section id="how-it-works" className="relative overflow-x-clip border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              How it works
+            </p>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              Audit. Automate. Run.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              Setup is included in the retainer — month one covers the audit and
+              your first live system. No separate build invoice.
+            </p>
+
+            <ol className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {process.map((step, index) => (
+                <li key={step.title} className="relative">
+                  <p className="font-display text-xs tracking-[0.16em] text-accent">
+                    Step 0{index + 1}
+                  </p>
+                  <h3 className="font-display mt-3 text-2xl font-semibold tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted">
+                    {step.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
               <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                How we help
+                Engagement
               </p>
               <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-                Built for businesses that need outcomes, not theatre.
+                Monthly retainer. First system live in 30 days.
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                Whether you are exploring your first AI use case or stitching
-                models into existing products and operations, we keep the work
-                grounded: scoped, measurable, and owned by your team when we
-                leave.
+              <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
+                From <span className="text-foreground">£3,000/month</span>,
+                adjusted to business size. After kickoff and scope lock, your
+                first agreed AI system goes live in production within 30 days —
+                or you get a full refund of month one.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+                Live means deployed, connected to the agreed tools and data, and
+                usable by your team for the agreed job — not a demo.
               </p>
             </div>
 
-            <ul className="flex flex-col justify-center gap-6">
-              {outcomes.map((item) => (
-                <li key={item} className="flex gap-4 text-base leading-snug sm:text-lg">
-                  <LogoMark className="mt-1 h-5 w-auto shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="border border-accent/30 bg-surface px-6 py-8 sm:px-8">
+              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                Who it’s for
+              </p>
+              <ul className="mt-6 space-y-5">
+                {fitPoints.map((point) => (
+                  <li key={point} className="flex gap-4 text-base leading-snug">
+                    <LogoMark className="mt-1 h-4 w-auto shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-8 border-t border-line pt-6 text-sm leading-relaxed text-muted">
+                Industry-agnostic. If there isn’t something concrete to build or
+                integrate, we won’t take the engagement.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -165,11 +253,12 @@ export default function Home() {
                 Contact
               </p>
               <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-                Ready to talk about what AI can do for you?
+                Tell us where the work is stuck.
               </h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-                Send a message below and it comes straight to us. We will reply
-                with a clear next step — no hard sell, no buzzword fog.
+                Share the bottleneck — email, reporting, CRM, ops, or something
+                unique to your business. We’ll reply with whether it’s a fit and
+                what a first system could look like.
               </p>
               <ContactForm />
             </div>
@@ -181,7 +270,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="text-sm text-muted">
             <Logo className="text-base text-foreground" />
-            <p className="mt-3">AI consultation &amp; integration.</p>
+            <p className="mt-3">Bespoke AI systems integration.</p>
           </div>
           <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
             <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent">

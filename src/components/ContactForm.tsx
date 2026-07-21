@@ -115,7 +115,7 @@ export function ContactForm() {
           maxLength={5000}
           rows={5}
           className="field resize-y"
-          placeholder="What are you trying to achieve?"
+          placeholder="What bottleneck should we look at first?"
         />
       </div>
 
