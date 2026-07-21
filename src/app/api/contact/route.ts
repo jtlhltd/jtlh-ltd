@@ -3,9 +3,10 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "jtlhltd@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "jonahthomaslloydhughes@gmail.com";
 const FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL ?? "JTLH LTD <onboarding@resend.dev>";
+const BUSINESS_INBOX = "jtlhltd@gmail.com";
 
 type ContactBody = {
   name?: string;
@@ -74,6 +75,7 @@ export async function POST(request: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
+        `Business inbox: ${BUSINESS_INBOX}`,
         "",
         message,
       ].join("\n"),
