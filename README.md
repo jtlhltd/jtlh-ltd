@@ -4,28 +4,22 @@ Landing site for **JTLH LTD** — AI consultation and integration.
 
 ## Stack
 
-- Next.js (static export)
-- TypeScript
+- Next.js + TypeScript
 - Tailwind CSS
-- Deployed on Render
+- Resend (contact form)
+- Render web service
 
 ## Local development
 
 ```bash
 npm install
+cp .env.example .env.local
+# add RESEND_API_KEY
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Build
-
-```bash
-npm run build
-```
-
-Static output lands in `out/`.
-
 ## Contact
 
-[jtlhltd@gmail.com](mailto:jtlhltd@gmail.com)
+Form posts to `/api/contact` and emails **jtlhltd@gmail.com** via Resend.

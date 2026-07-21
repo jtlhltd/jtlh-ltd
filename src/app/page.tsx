@@ -1,5 +1,7 @@
-import { ContactActions, EMAIL, GMAIL } from "@/components/ContactActions";
+import { ContactForm } from "@/components/ContactForm";
 import { Logo, LogoMark } from "@/components/Logo";
+
+const EMAIL = "jtlhltd@gmail.com";
 
 const services = [
   {
@@ -24,7 +26,7 @@ const outcomes = [
 
 export default function Home() {
   return (
-    <div className="bg-atmosphere relative min-h-full overflow-x-hidden bg-noise">
+    <div className="bg-atmosphere relative min-h-full overflow-x-clip bg-noise">
       <header className="absolute inset-x-0 top-0 z-20">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 sm:px-8">
           <a href="#top" className="text-lg text-foreground transition-opacity hover:opacity-80 sm:text-xl">
@@ -40,12 +42,12 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="relative flex min-h-[100svh] flex-col justify-end px-6 pb-16 pt-28 sm:px-8 sm:pb-24">
+        <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-16 pt-28 sm:px-8 sm:pb-24">
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.12]"
+            className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.12]"
             aria-hidden="true"
           >
-            <LogoMark className="absolute -right-[8%] top-[18%] h-[55vh] w-auto sm:h-[62vh]" />
+            <LogoMark className="absolute right-0 top-[18%] h-[50vh] w-auto translate-x-1/4 sm:h-[58vh]" />
           </div>
 
           <div className="relative z-10 mx-auto w-full max-w-6xl">
@@ -126,7 +128,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative px-6 py-20 sm:px-8 sm:py-28">
+        <section className="relative overflow-x-clip px-6 py-20 sm:px-8 sm:py-28">
           <div className="absolute inset-x-0 top-0 h-px bg-line" />
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             <div>
@@ -155,7 +157,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-8 px-6 pb-24 sm:px-8 sm:pb-32">
+        <section id="contact" className="scroll-mt-8 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
           <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
             <div className="relative z-10">
               <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto opacity-[0.18] sm:h-40" />
@@ -166,10 +168,10 @@ export default function Home() {
                 Ready to talk about what AI can do for you?
               </h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-                Tell us what you are trying to achieve. We will reply with a
-                clear next step — no hard sell, no buzzword fog.
+                Send a message below and it comes straight to us. We will reply
+                with a clear next step — no hard sell, no buzzword fog.
               </p>
-              <ContactActions className="mt-10" />
+              <ContactForm />
             </div>
           </div>
         </section>
@@ -182,12 +184,7 @@ export default function Home() {
             <p className="mt-3">AI consultation &amp; integration.</p>
           </div>
           <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
-            <a
-              href={GMAIL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-accent"
-            >
+            <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent">
               {EMAIL}
             </a>
             <p>© {new Date().getFullYear()} JTLH LTD</p>

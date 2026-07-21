@@ -1,18 +1,19 @@
 services:
   - type: web
-    name: jtlh-ltd
-    runtime: static
+    name: jtlh-ltd-web
+    runtime: node
     plan: free
+    region: frankfurt
+    branch: main
     buildCommand: npm ci && npm run build
-    staticPublishPath: out
-    pullRequestPreviewsEnabled: false
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: DENY
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
-      - path: /*
-        name: Referrer-Policy
-        value: strict-origin-when-cross-origin
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: CONTACT_TO_EMAIL
+        value: jtlhltd@gmail.com
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_FROM_EMAIL
+        sync: false

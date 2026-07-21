@@ -31,12 +31,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  scrollbar-gutter: stable;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -58,11 +61,11 @@ body {
 @keyframes mark-rise {
   from {
     opacity: 0;
-    transform: translateY(10px) skewX(-4deg);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) skewX(0);
+    transform: translateY(0);
   }
 }
 
@@ -123,7 +126,6 @@ body {
     rgba(232, 195, 106, 0.25) 80%,
     transparent
   );
-  transform: skewX(-12deg);
 }
 
 .btn-gold {
@@ -140,4 +142,25 @@ body {
   background: #f0d084;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(232, 195, 106, 0.22);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #080808;
+  color: var(--foreground);
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: #6b6b6b;
+}
+
+.field:focus {
+  border-color: rgba(232, 195, 106, 0.55);
+  box-shadow: 0 0 0 3px rgba(232, 195, 106, 0.12);
 }
