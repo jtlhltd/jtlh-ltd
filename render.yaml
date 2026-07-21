@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: jtlh-ltd-web
+    name: jtlh-ltd
     runtime: node
     plan: free
     region: frankfurt
