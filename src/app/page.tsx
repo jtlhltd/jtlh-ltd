@@ -71,12 +71,12 @@ const differences = [
     body: "Live apps and integrations on a serious stack — not no-code glue that falls over when the business gets busy.",
   },
   {
-    title: "We own it end-to-end",
-    body: "Design, build, host, and run. Your team uses the system; we keep it alive. No half-finished handoff.",
+    title: "We manage it end-to-end",
+    body: "Design, build, host, and run. Your team uses the system; we keep it alive.",
   },
   {
-    title: "We start with one clear problem",
-    body: "One agreed system first, measured, live. Then we expand. No multi-year transformation theatre.",
+    title: "You get a working system, not a slide deck",
+    body: "We don’t stop at recommendations. The output is software your team can use, with us still looking after it.",
   },
 ];
 
@@ -99,24 +99,18 @@ const contrast = [
   },
 ];
 
-const fitPoints = [
-  "You already run on real tools — email, CRM, docs, spreadsheets, or internal software",
-  "Too much work still depends on people doing the same tasks by hand",
-  "You want a system built and owned end-to-end — not another tool for your team to maintain",
-];
-
 const faqs = [
   {
     q: "What kinds of businesses do you work with?",
-    a: "Mostly UK businesses, across industries. Fit is operational: you have real tools and repeatable work that software and AI can take over. If there isn’t something concrete to build or integrate, we won’t take it on.",
+    a: "Businesses with real tools and repeatable work that software and AI can take over. If there isn’t something concrete to build or integrate, we won’t take it on.",
   },
   {
     q: "Do you just advise, or do you build?",
-    a: "Both, in that order. The audit decides what to build. Then we design, ship, host, and run the system. Advice without delivery isn’t the engagement.",
+    a: "Both, in that order. We start with an audit to decide what to build, then we design, ship, host, and run the system. We don’t hand over a plan and walk away.",
   },
   {
     q: "What does “live in 30 days” mean?",
-    a: "After kickoff and scope lock, the first agreed system is deployed, connected to the agreed tools and data, and usable by your team for that job — not a demo or staging-only prototype. If we miss that, you get a full refund of month one.",
+    a: "Once we start and agree what we’re building, your first system goes live within 30 days — connected to your tools, ready for your team to use, not a demo. If we miss that, you get month one back in full.",
   },
   {
     q: "Who hosts and maintains the systems?",
@@ -348,10 +342,10 @@ export default function Home() {
         <section id="why" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-              Why JTLH
+              Why us?
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              Built like a product team, engaged like an operator.
+              Built to stay in the business, not sit in a folder.
             </h2>
             <ul className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
               {differences.map((item) => (
@@ -367,51 +361,25 @@ export default function Home() {
         </section>
 
         <section id="guarantee" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div>
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                Guarantee
-              </p>
-              <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-                First system live in 30 days, or month one back.
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
-                After kickoff and scope lock, your first agreed AI system goes live
-                in production within 30 days. If we don’t ship what we agreed, you
-                get a full refund of month one.
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-                Live means deployed, connected to the agreed tools and data, and
-                usable by your team for the agreed job — not a demo. The clock
-                pauses if access, data, or decisions are delayed on your side.
-              </p>
-              <a
-                href="#contact"
-                className="btn-gold mt-8 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
-              >
-                Talk about a first system
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-
-            <div className="border border-accent/30 bg-surface px-6 py-8 sm:px-8">
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                Who it’s for
-              </p>
-              <ul className="mt-6 space-y-5">
-                {fitPoints.map((point) => (
-                  <li key={point} className="flex gap-4 text-base leading-snug">
-                    <LogoMark className="mt-1 h-4 w-auto shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-8 border-t border-line pt-6 text-sm leading-relaxed text-muted">
-                Monthly engagement. We keep ownership of hosting and delivery so
-                the system stays a working part of the business — not a project
-                that dies after launch.
-              </p>
-            </div>
+          <div className="mx-auto max-w-3xl">
+            <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+              Guarantee
+            </p>
+            <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+              First system live in 30 days, or month one back.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
+              After we start and agree what we’re building, your first AI system
+              goes live within 30 days. If we don’t ship what we agreed, you get
+              a full refund of month one.
+            </p>
+            <a
+              href="#contact"
+              className="btn-gold mt-8 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
+            >
+              Talk about a first system
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </section>
 
@@ -426,15 +394,6 @@ export default function Home() {
             <FaqAccordion items={faqs} />
           </div>
         </section>
-
-        <CtaBand
-          eyebrow="Ready"
-          title="Tell us where the work is stuck."
-          body="Share what’s holding the business back. We’ll reply with whether it’s a fit and what a first system could look like."
-          primaryLabel="Go to contact form"
-          secondaryHref="#faq"
-          secondaryLabel="Read the FAQ"
-        />
 
         <section id="contact" className="scroll-mt-24 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
           <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
