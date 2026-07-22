@@ -13,15 +13,6 @@ const snapshot = [
   { label: "Fit", value: "Concrete bottlenecks" },
 ];
 
-const capabilities = [
-  "Knowledge & reporting",
-  "Email automation",
-  "CRM systems",
-  "Workflow agents",
-  "Internal tools",
-  "Document processing",
-];
-
 const problems = [
   {
     title: "Work still runs on people",
@@ -223,21 +214,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        {/* Capability strip — ends cleanly after Document processing */}
-        <div className="border-b border-line px-6 py-7 sm:px-8" aria-hidden="true">
-          <div className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-3 overflow-x-auto">
-            {capabilities.map((item) => (
-              <span
-                key={item}
-                className="inline-flex shrink-0 items-center gap-2.5 font-display text-[0.7rem] leading-6 font-semibold tracking-[0.12em] text-muted uppercase sm:gap-3 sm:text-sm sm:tracking-[0.14em]"
-              >
-                <span className="text-accent">◆</span>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
 
         <section id="problem" className="scroll-mt-24 px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
