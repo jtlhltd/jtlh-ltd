@@ -154,7 +154,7 @@ export default function Home() {
 
       <main id="top">
         {/* Hero — brand first, one headline, one line, dual CTA */}
-        <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-16 pt-28 sm:px-8 sm:pb-20">
+        <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-16 pt-24 sm:px-8 sm:pb-20">
           <div
             className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.12]"
             aria-hidden="true"
@@ -163,7 +163,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto w-full max-w-6xl">
-            <div className="animate-mark mb-10 text-4xl text-foreground sm:mb-14 sm:text-5xl md:text-6xl lg:text-7xl">
+            <div className="animate-mark mb-8 text-4xl text-foreground sm:mb-10 sm:text-5xl md:text-6xl lg:text-7xl">
               <Logo />
             </div>
 
