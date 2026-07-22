@@ -25,34 +25,38 @@ export default async function Image() {
           background: "#050505",
         }}
       >
-        <svg
-          width="290"
-          height="168"
-          viewBox="0 0 124 72"
-          fill="none"
-          style={{ marginBottom: 36 }}
-        >
-          <path d="M0 72H28V36L0 72Z" fill="#E8C36A" />
-          <path d="M36 72H72V18L36 72Z" fill="#E8C36A" />
-          <path d="M80 72H124V0L80 72Z" fill="#E8C36A" />
-        </svg>
+        {/* Match site Logo: mark + wordmark in one horizontal row */}
         <div
           style={{
             display: "flex",
-            fontFamily: "Syne",
-            fontSize: 64,
-            fontWeight: 700,
-            color: "#F4F4F4",
-            letterSpacing: "0.08em",
-            lineHeight: 1,
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 36,
           }}
         >
-          JTLH LTD
+          <svg width="168" height="98" viewBox="0 0 124 72" fill="none">
+            <path d="M0 72H28V36L0 72Z" fill="#E8C36A" />
+            <path d="M36 72H72V18L36 72Z" fill="#E8C36A" />
+            <path d="M80 72H124V0L80 72Z" fill="#E8C36A" />
+          </svg>
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "Syne",
+              fontSize: 72,
+              fontWeight: 700,
+              color: "#F4F4F4",
+              letterSpacing: "0.08em",
+              lineHeight: 1,
+            }}
+          >
+            JTLH LTD
+          </div>
         </div>
         <div
           style={{
             display: "flex",
-            marginTop: 28,
+            marginTop: 40,
             fontFamily: "Outfit",
             fontSize: 30,
             fontWeight: 600,
