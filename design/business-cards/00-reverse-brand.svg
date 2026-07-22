@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="65mm" height="65mm" viewBox="0 0 650 650">
+  <rect width="650" height="650" fill="#050505"/>
+  
+    <g transform="translate(145 220) scale(1.4)">
+  <g fill="#E8C36A">
+    <path d="M0 72H28V36L0 72Z"/>
+    <path d="M36 72H72V18L36 72Z"/>
+    <path d="M80 72H124V0L80 72Z"/>
+  </g>
+</g>
+    <text x="325" y="400" text-anchor="middle" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="4">JTLH LTD</text>
+    <text x="325" y="450" text-anchor="middle" fill="#A3A3A3" font-family="Arial, Helvetica, sans-serif" font-size="20">Bespoke AI systems</text>
+  
+</svg>
