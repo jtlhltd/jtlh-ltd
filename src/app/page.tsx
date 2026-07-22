@@ -229,17 +229,19 @@ export default function Home() {
         </section>
 
         {/* Capability marquee — Makematic catalogue scroll */}
-        <div className="overflow-x-clip border-b border-line py-7" aria-hidden="true">
-          <div className="marquee-track flex w-max items-center gap-10 whitespace-nowrap">
-            {[...capabilities, ...capabilities].map((item, index) => (
-              <span
-                key={`${item}-${index}`}
-                className="inline-flex items-center font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
-              >
-                <span className="mr-10 text-accent">◆</span>
-                {item}
-              </span>
-            ))}
+        <div className="border-b border-line px-6 py-7 sm:px-8" aria-hidden="true">
+          <div className="overflow-x-clip">
+            <div className="marquee-track flex w-max items-center gap-10 whitespace-nowrap">
+              {[...capabilities, ...capabilities].map((item, index) => (
+                <span
+                  key={`${item}-${index}`}
+                  className="inline-flex items-center font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
+                >
+                  <span className="mr-10 text-accent">◆</span>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
