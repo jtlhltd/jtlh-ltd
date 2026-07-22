@@ -146,6 +146,12 @@ body {
   box-shadow: 0 8px 24px rgba(232, 195, 106, 0.22);
 }
 
+.btn-gold:active {
+  transform: scale(0.98) translateY(0);
+  box-shadow: 0 0 0 1px rgba(232, 195, 106, 0.35);
+  transition-duration: 0.12s;
+}
+
 .field {
   width: 100%;
   border: 1px solid var(--line);
@@ -174,5 +180,12 @@ body {
   .animate-rise-delay-3,
   .animate-mark {
     animation: none;
+  }
+
+  .btn-gold,
+  .btn-gold:hover,
+  .btn-gold:active {
+    transition: none;
+    transform: none;
   }
 }
