@@ -1,7 +1,30 @@
 import { ContactForm } from "@/components/ContactForm";
+import { CtaBand } from "@/components/CtaBand";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import { Logo, LogoMark } from "@/components/Logo";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const EMAIL = "jtlhltd@gmail.com";
+
+const snapshot = [
+  { label: "Model", value: "Audit → Build → Run" },
+  { label: "First system", value: "Live in 30 days" },
+  { label: "Ownership", value: "We host & operate" },
+  { label: "Fit", value: "Concrete bottlenecks" },
+];
+
+const capabilities = [
+  "Knowledge & reporting",
+  "Email automation",
+  "CRM systems",
+  "Workflow agents",
+  "Internal tools",
+  "Document processing",
+  "Lead handling",
+  "Custom AI apps",
+  "RAG systems",
+  "Ops dashboards",
+];
 
 const problems = [
   {
@@ -20,18 +43,22 @@ const problems = [
 
 const buildExamples = [
   {
+    id: "knowledge",
     title: "Knowledge & reporting",
     body: "RAG systems over your docs, specs, and data so teams get accurate answers and reports without digging through folders.",
   },
   {
+    id: "email",
     title: "Email & workflow automation",
     body: "Inbound handling, follow-ups, routing, and admin that currently eats hours — wired into the tools you already use.",
   },
   {
+    id: "crm",
     title: "CRM & internal tools",
     body: "Custom CRMs, AI on top of your existing CRM, booking flows, dashboards, and ops apps built around how you actually work.",
   },
   {
+    id: "bespoke",
     title: "Bespoke AI systems",
     body: "Anything concrete we can design, build, host, and run — not a ChatGPT wrapper, a production system inside your business.",
   },
@@ -85,11 +112,23 @@ const differences = [
   },
 ];
 
-const notThis = [
-  "Strategy decks with no build",
-  "Chatbot demos that never leave staging",
-  "Tools dumped on your team to maintain",
-  "Vague “AI transformation” retainers with no scope",
+const contrast = [
+  {
+    them: "Strategy decks with no build",
+    us: "Audit that becomes a live system",
+  },
+  {
+    them: "Chatbot demos that never leave staging",
+    us: "Production in your real stack",
+  },
+  {
+    them: "Tools dumped on your team to maintain",
+    us: "We host, monitor, and expand",
+  },
+  {
+    them: "Vague transformation retainers",
+    us: "One scoped bottleneck at a time",
+  },
 ];
 
 const fitPoints = [
@@ -124,42 +163,11 @@ const faqs = [
 export default function Home() {
   return (
     <div className="bg-atmosphere relative min-h-full overflow-x-clip bg-noise">
-      <header className="absolute inset-x-0 top-0 z-20">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 sm:px-8">
-          <a href="#top" className="text-lg text-foreground transition-opacity hover:opacity-80 sm:text-xl">
-            <Logo />
-          </a>
-          <nav className="flex items-center gap-4 sm:gap-7">
-            <a
-              href="#what-we-build"
-              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent md:inline"
-            >
-              Systems
-            </a>
-            <a
-              href="#how-it-works"
-              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent sm:inline"
-            >
-              Process
-            </a>
-            <a
-              href="#faq"
-              className="hidden font-display text-xs font-semibold tracking-[0.14em] text-muted uppercase transition-colors hover:text-accent lg:inline"
-            >
-              FAQ
-            </a>
-            <a
-              href="#contact"
-              className="font-display text-xs font-semibold tracking-[0.14em] text-accent uppercase transition-colors hover:text-[#f0d084] sm:text-sm"
-            >
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top">
-        <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-16 pt-28 sm:px-8 sm:pb-24">
+        {/* Hero — brand first, one headline, one line, dual CTA */}
+        <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-16 pt-28 sm:px-8 sm:pb-20">
           <div
             className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.12]"
             aria-hidden="true"
@@ -195,20 +203,47 @@ export default function Home() {
                 </span>
               </a>
               <a
-                href="#problem"
+                href="#process"
                 className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
               >
-                Why this exists
+                See the process
               </a>
             </div>
           </div>
         </section>
 
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="slant-rule" />
+        {/* Snapshot strip — AI-Native “key facts” pattern */}
+        <section aria-label="Engagement snapshot" className="border-y border-line bg-surface/60">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px sm:grid-cols-4">
+            {snapshot.map((item) => (
+              <div key={item.label} className="px-6 py-7 sm:px-8 sm:py-9">
+                <p className="font-display text-[0.65rem] font-semibold tracking-[0.18em] text-muted uppercase">
+                  {item.label}
+                </p>
+                <p className="font-display mt-2 text-base font-semibold tracking-tight text-foreground sm:text-lg">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Capability marquee — Makematic catalogue scroll */}
+        <div className="overflow-hidden border-b border-line py-5" aria-hidden="true">
+          <div className="marquee-track flex w-max gap-10 whitespace-nowrap">
+            {[...capabilities, ...capabilities].map((item, index) => (
+              <span
+                key={`${item}-${index}`}
+                className="font-display text-sm font-semibold tracking-[0.14em] text-muted uppercase"
+              >
+                <span className="mr-10 text-accent">◆</span>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <section id="problem" className="scroll-mt-8 px-6 py-20 sm:px-8 sm:py-28">
+        <section id="problem" className="scroll-mt-24 px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               The problem
@@ -235,7 +270,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="what-we-do" className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <CtaBand
+          eyebrow="Next step"
+          title="Got a bottleneck you can point at?"
+          body="If the work is repeatable and stuck in people, inboxes, or spreadsheets, we can usually systemise it."
+          secondaryHref="#systems"
+          secondaryLabel="Browse systems"
+        />
+
+        <section id="what-we-do" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               What we do
@@ -251,73 +294,67 @@ export default function Home() {
               </p>
               <p>
                 If the work is repeatable and fixable with software and AI, we take
-                it on. If it isn’t, we say so. You don’t get a chatbot demo and a
-                slide pack. You get production systems — designed, integrated,
-                hosted, and run by us.
+                it on. If it isn’t, we say so.
               </p>
             </div>
 
-            <div className="mt-14 grid gap-8 border border-accent/25 bg-surface px-6 py-10 sm:grid-cols-2 sm:px-10 sm:py-12">
-              <div>
-                <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                  What you get
+            {/* Us vs them — AI-Native contrast layout */}
+            <div className="mt-14 overflow-hidden border border-line">
+              <div className="grid border-b border-line bg-surface sm:grid-cols-2">
+                <p className="border-b border-line px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase sm:border-r sm:border-b-0">
+                  Typical AI pitch
                 </p>
-                <ul className="mt-6 space-y-4 text-base leading-snug">
-                  <li className="flex gap-3">
-                    <span className="text-accent" aria-hidden="true">
-                      →
-                    </span>
-                    Audit of where time and money leak
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-accent" aria-hidden="true">
-                      →
-                    </span>
-                    A live AI system in your stack
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-accent" aria-hidden="true">
-                      →
-                    </span>
-                    Hosting, monitoring, and ongoing expansion
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-display text-xs font-semibold tracking-[0.2em] text-muted uppercase">
-                  What you don’t get
+                <p className="px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+                  JTLH engagement
                 </p>
-                <ul className="mt-6 space-y-4 text-base leading-snug text-muted">
-                  {notThis.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span aria-hidden="true">—</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
+              {contrast.map((row) => (
+                <div
+                  key={row.us}
+                  className="grid border-b border-line last:border-b-0 sm:grid-cols-2"
+                >
+                  <p className="border-b border-line px-6 py-5 text-muted sm:border-r sm:border-b-0">
+                    {row.them}
+                  </p>
+                  <p className="px-6 py-5 text-foreground">{row.us}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="what-we-build" className="scroll-mt-8 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="systems" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-              What we build
+              Systems
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
               Whatever your bottleneck needs.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Scope is locked after the audit. These are the systems we ship most
-              often — each one tailored to your workflows, not a template.
+              Scope is locked after the audit. Jump to a system type, or scroll the
+              catalogue — each one is tailored to your workflows, not a template.
             </p>
+
+            {/* Catalogue jump links — Makematic product map */}
+            <div className="mt-10 flex flex-wrap gap-3">
+              {buildExamples.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#system-${item.id}`}
+                  className="border border-line px-4 py-2 font-display text-xs font-semibold tracking-[0.12em] text-muted uppercase transition-colors hover:border-accent/50 hover:text-accent"
+                >
+                  {item.title}
+                </a>
+              ))}
+            </div>
 
             <ul className="mt-14 space-y-0 border-t border-line">
               {buildExamples.map((item, index) => (
                 <li
-                  key={item.title}
-                  className="grid gap-3 border-b border-line py-8 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] sm:gap-10 sm:py-10"
+                  key={item.id}
+                  id={`system-${item.id}`}
+                  className="scroll-mt-28 grid gap-3 border-b border-line py-8 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] sm:gap-10 sm:py-10"
                 >
                   <div className="flex items-baseline gap-4">
                     <span className="font-display text-xs tracking-[0.16em] text-accent">
@@ -336,26 +373,30 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="scroll-mt-8 relative overflow-x-clip border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="process" className="scroll-mt-24 relative overflow-x-clip border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-              How it works
+              Process
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              Audit. Automate. Run.
+              Audit. Build. Run.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Setup is included in the engagement. Month one covers the audit and
-              your first live system — then we keep building from there.
+              Three phases. Setup is included. Month one covers the audit and your
+              first live system — then we keep expanding.
             </p>
 
-            <ol className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+            {/* Numbered phase rail */}
+            <ol className="mt-14 grid gap-0 border border-line sm:grid-cols-3">
               {process.map((step, index) => (
-                <li key={step.title} className="relative">
-                  <p className="font-display text-xs tracking-[0.16em] text-accent">
-                    Step 0{index + 1}
+                <li
+                  key={step.title}
+                  className="border-b border-line px-6 py-8 last:border-b-0 sm:border-r sm:border-b-0 sm:last:border-r-0 sm:px-8 sm:py-10"
+                >
+                  <p className="font-display text-4xl font-semibold tracking-tight text-accent/40">
+                    0{index + 1}
                   </p>
-                  <h3 className="font-display mt-3 text-2xl font-semibold tracking-tight">
+                  <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight">
                     {step.title}
                   </h3>
                   <p className="mt-3 text-base leading-relaxed text-muted">
@@ -396,7 +437,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="why" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               Why JTLH
@@ -417,7 +458,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="guarantee" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
               <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
@@ -436,6 +477,13 @@ export default function Home() {
                 usable by your team for the agreed job — not a demo. The clock
                 pauses if access, data, or decisions are delayed on your side.
               </p>
+              <a
+                href="#contact"
+                className="btn-gold mt-8 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
+              >
+                Talk about a first system
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
 
             <div className="border border-accent/30 bg-surface px-6 py-8 sm:px-8">
@@ -459,7 +507,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="faq" className="scroll-mt-8 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
+        <section id="faq" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
               FAQ
@@ -467,22 +515,20 @@ export default function Home() {
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
               Straight answers.
             </h2>
-            <ul className="mt-14 space-y-0 border-t border-line">
-              {faqs.map((item) => (
-                <li key={item.q} className="border-b border-line py-8 sm:py-10">
-                  <h3 className="font-display max-w-3xl text-xl font-semibold tracking-tight sm:text-2xl">
-                    {item.q}
-                  </h3>
-                  <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
-                    {item.a}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <FaqAccordion items={faqs} />
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-8 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
+        <CtaBand
+          eyebrow="Ready"
+          title="Tell us where the work is stuck."
+          body="Share the bottleneck. We’ll reply with whether it’s a fit and what a first system could look like."
+          primaryLabel="Go to contact form"
+          secondaryHref="#faq"
+          secondaryLabel="Read the FAQ"
+        />
+
+        <section id="contact" className="scroll-mt-24 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
           <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
             <div className="relative z-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <div>
@@ -491,19 +537,30 @@ export default function Home() {
                   Contact
                 </p>
                 <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-                  Tell us where the work is stuck.
+                  Send the bottleneck.
                 </h2>
                 <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-                  Share the bottleneck — email, reporting, CRM, ops, or something
-                  unique to your business. We’ll reply with whether it’s a fit and
-                  what a first system could look like.
+                  Email, reporting, CRM, ops, or something unique to your business.
+                  Form goes straight to us.
                 </p>
-                <p className="mt-8 text-sm text-muted">
-                  Prefer email directly?{" "}
-                  <a href={`mailto:${EMAIL}`} className="text-accent transition-colors hover:text-[#f0d084]">
-                    {EMAIL}
-                  </a>
-                </p>
+                <dl className="mt-10 space-y-4 border-t border-line pt-8 text-sm">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-6">
+                    <dt className="font-display tracking-[0.12em] text-muted uppercase">
+                      Email
+                    </dt>
+                    <dd>
+                      <a href={`mailto:${EMAIL}`} className="text-accent transition-colors hover:text-[#f0d084]">
+                        {EMAIL}
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-6">
+                    <dt className="font-display tracking-[0.12em] text-muted uppercase">
+                      Response
+                    </dt>
+                    <dd className="text-foreground">Usually within one working day</dd>
+                  </div>
+                </dl>
               </div>
               <ContactForm />
             </div>
@@ -520,11 +577,14 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            <a href="#what-we-do" className="text-muted transition-colors hover:text-accent">
-              What we do
+            <a href="#systems" className="text-muted transition-colors hover:text-accent">
+              Systems
             </a>
-            <a href="#how-it-works" className="text-muted transition-colors hover:text-accent">
+            <a href="#process" className="text-muted transition-colors hover:text-accent">
               Process
+            </a>
+            <a href="#guarantee" className="text-muted transition-colors hover:text-accent">
+              Guarantee
             </a>
             <a href="#faq" className="text-muted transition-colors hover:text-accent">
               FAQ
