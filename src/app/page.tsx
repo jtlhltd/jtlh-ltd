@@ -20,10 +20,6 @@ const capabilities = [
   "Workflow agents",
   "Internal tools",
   "Document processing",
-  "Lead handling",
-  "Custom AI apps",
-  "RAG systems",
-  "Ops dashboards",
 ];
 
 const problems = [
@@ -228,21 +224,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Capability marquee — Makematic catalogue scroll */}
-        <div className="border-b border-line px-6 py-7 sm:px-8" aria-hidden="true">
-          <div className="overflow-x-clip">
-            <div className="marquee-track flex w-max items-center gap-10 whitespace-nowrap">
-              {[...capabilities, ...capabilities].map((item, index) => (
-                <span
-                  key={`${item}-${index}`}
-                  className="inline-flex items-center font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
-                >
-                  <span className="mr-10 text-accent">◆</span>
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
+        {/* Capability strip — ends cleanly after Document processing */}
+        <div
+          className="flex flex-wrap items-center gap-x-10 gap-y-3 border-b border-line px-6 py-7 sm:px-8"
+          aria-hidden="true"
+        >
+          {capabilities.map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
+            >
+              <span className="mr-10 text-accent">◆</span>
+              {item}
+            </span>
+          ))}
         </div>
 
         <section id="problem" className="scroll-mt-24 px-6 py-20 sm:px-8 sm:py-28">
