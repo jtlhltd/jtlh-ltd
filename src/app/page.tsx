@@ -225,19 +225,18 @@ export default function Home() {
         </section>
 
         {/* Capability strip — ends cleanly after Document processing */}
-        <div
-          className="flex flex-wrap items-center gap-x-10 gap-y-3 border-b border-line px-6 py-7 sm:px-8"
-          aria-hidden="true"
-        >
-          {capabilities.map((item) => (
-            <span
-              key={item}
-              className="inline-flex items-center font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
-            >
-              <span className="mr-10 text-accent">◆</span>
-              {item}
-            </span>
-          ))}
+        <div className="border-b border-line px-6 py-7 sm:px-8" aria-hidden="true">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:justify-between sm:gap-x-4">
+            {capabilities.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-3 font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
+              >
+                <span className="text-accent">◆</span>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
         <section id="problem" className="scroll-mt-24 px-6 py-20 sm:px-8 sm:py-28">
