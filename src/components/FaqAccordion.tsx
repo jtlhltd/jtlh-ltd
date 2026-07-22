@@ -17,9 +17,9 @@ export function FaqAccordion({ items }: { items: Faq[] }) {
               type="button"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : index)}
-              className="flex w-full cursor-pointer items-start justify-between gap-6 py-7 text-left sm:py-8"
+              className="flex w-full cursor-pointer items-start justify-between gap-4 py-6 text-left sm:gap-6 sm:py-8"
             >
-              <span className="font-display max-w-3xl text-xl font-semibold tracking-tight sm:text-2xl">
+              <span className="font-display max-w-3xl text-lg font-semibold tracking-tight sm:text-2xl">
                 {item.q}
               </span>
               <span

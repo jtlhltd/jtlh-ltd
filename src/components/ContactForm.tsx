@@ -133,7 +133,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="btn-gold inline-flex w-fit items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide disabled:cursor-not-allowed disabled:opacity-70"
+        className="btn-gold inline-flex min-h-11 w-full items-center justify-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide disabled:cursor-not-allowed disabled:opacity-70 sm:w-fit"
       >
         {status === "sending" ? "Sending…" : "Send message"}
         <span aria-hidden="true">→</span>

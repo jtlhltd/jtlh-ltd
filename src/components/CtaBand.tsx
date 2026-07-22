@@ -18,8 +18,8 @@ export function CtaBand({
   secondaryLabel,
 }: CtaBandProps) {
   return (
-    <section className="px-6 py-16 sm:px-8 sm:py-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 border border-accent/35 bg-surface px-8 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-12 sm:py-14">
+    <section className="px-6 py-12 sm:px-8 sm:py-20">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 border border-accent/35 bg-surface px-6 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-12 sm:py-14">
         <div className="max-w-2xl">
           <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
             {eyebrow}
@@ -29,10 +29,10 @@ export function CtaBand({
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">{body}</p>
         </div>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href={primaryHref}
-            className="btn-gold inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
+            className="btn-gold inline-flex min-h-11 w-full items-center justify-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide sm:w-auto"
           >
             {primaryLabel}
             <span aria-hidden="true">→</span>
@@ -40,7 +40,7 @@ export function CtaBand({
           {secondaryHref && secondaryLabel ? (
             <a
               href={secondaryHref}
-              className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
+              className="inline-flex min-h-11 items-center justify-center font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
             >
               {secondaryLabel}
             </a>

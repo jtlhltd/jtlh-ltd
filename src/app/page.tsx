@@ -129,32 +129,32 @@ export default function Home() {
 
       <main id="top">
         {/* Hero — brand first, one headline, one line, dual CTA */}
-        <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-16 pt-24 sm:px-8 sm:pb-20">
+        <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pt-24 pb-[max(4rem,env(safe-area-inset-bottom))] sm:px-8 sm:pb-20 max-[480px]:min-h-0 max-[480px]:justify-start max-[480px]:pt-28 max-[480px]:pb-14">
           <div
-            className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.12]"
+            className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.08] sm:opacity-[0.12]"
             aria-hidden="true"
           >
-            <LogoMark className="absolute right-0 top-[18%] h-[50vh] w-auto translate-x-1/4 sm:h-[58vh]" />
+            <LogoMark className="absolute right-0 top-[18%] h-[36vh] w-auto translate-x-1/3 sm:h-[58vh] sm:translate-x-1/4" />
           </div>
 
           <div className="relative z-10 mx-auto w-full max-w-6xl">
-            <div className="animate-mark mb-8 text-4xl text-foreground sm:mb-10 sm:text-5xl md:text-6xl lg:text-7xl">
+            <div className="animate-mark mb-6 text-[2rem] text-foreground sm:mb-10 sm:text-5xl md:text-6xl lg:text-7xl">
               <Logo />
             </div>
 
-            <h1 className="animate-rise font-display max-w-3xl text-3xl leading-[1.1] font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            <h1 className="animate-rise font-display max-w-3xl text-[1.75rem] leading-[1.15] font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.1] md:text-6xl">
               Bespoke AI systems, built into your business.
             </h1>
 
-            <p className="animate-rise-delay-1 mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="animate-rise-delay-1 mt-5 max-w-2xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
               We audit your business, build the automations, then host and run
               them so manual work leaves your team and the system keeps running.
             </p>
 
-            <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
+            <div className="animate-rise-delay-2 mt-8 flex flex-col items-start gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center">
               <a
                 href="#contact"
-                className="btn-gold group inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
+                className="btn-gold group inline-flex min-h-11 w-full items-center justify-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide sm:w-auto"
               >
                 Start a conversation
                 <span
@@ -166,7 +166,7 @@ export default function Home() {
               </a>
               <a
                 href="#process"
-                className="font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
+                className="inline-flex min-h-11 items-center font-display text-sm font-medium tracking-wide text-muted transition-colors hover:text-accent"
               >
                 See the process
               </a>
@@ -176,16 +176,16 @@ export default function Home() {
 
         {/* Snapshot strip */}
         <section aria-label="Engagement snapshot" className="border-y border-line bg-surface/60">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {snapshot.map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center justify-center px-6 py-10 text-center sm:px-8 sm:py-12"
+                className="flex items-baseline justify-between gap-4 px-6 py-5 sm:flex-col sm:items-center sm:justify-center sm:gap-0 sm:px-8 sm:py-12 sm:text-center"
               >
-                <p className="font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase">
+                <p className="font-display text-[0.65rem] font-semibold tracking-[0.18em] text-muted uppercase sm:text-xs">
                   {item.label}
                 </p>
-                <p className="font-display mt-3 text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+                <p className="font-display text-base font-semibold tracking-tight text-foreground sm:mt-3 sm:text-xl">
                   {item.value}
                 </p>
               </div>
@@ -248,8 +248,8 @@ export default function Home() {
 
             {/* Us vs them */}
             <div className="mt-14 overflow-hidden border border-line">
-              <div className="grid border-b border-line bg-surface sm:grid-cols-2">
-                <p className="border-b border-line px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase sm:border-r sm:border-b-0">
+              <div className="hidden border-b border-line bg-surface sm:grid sm:grid-cols-2">
+                <p className="border-r border-line px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase">
                   Typical AI pitch
                 </p>
                 <p className="px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-accent uppercase">
@@ -261,10 +261,18 @@ export default function Home() {
                   key={row.us}
                   className="grid border-b border-line last:border-b-0 sm:grid-cols-2"
                 >
-                  <p className="border-b border-line px-6 py-5 text-muted sm:border-r sm:border-b-0">
-                    {row.them}
-                  </p>
-                  <p className="px-6 py-5 text-foreground">{row.us}</p>
+                  <div className="border-b border-line px-5 py-5 sm:border-r sm:border-b-0 sm:px-6">
+                    <p className="mb-2 font-display text-[0.65rem] font-semibold tracking-[0.16em] text-muted uppercase sm:hidden">
+                      Typical AI pitch
+                    </p>
+                    <p className="text-muted">{row.them}</p>
+                  </div>
+                  <div className="px-5 py-5 sm:px-6">
+                    <p className="mb-2 font-display text-[0.65rem] font-semibold tracking-[0.16em] text-accent uppercase sm:hidden">
+                      Our Approach
+                    </p>
+                    <p className="text-foreground">{row.us}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -375,7 +383,7 @@ export default function Home() {
             </p>
             <a
               href="#contact"
-              className="btn-gold mt-8 inline-flex items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
+              className="btn-gold mt-8 inline-flex min-h-11 items-center gap-3 px-7 py-3.5 font-display text-sm font-semibold tracking-wide"
             >
               Talk about a first system
               <span aria-hidden="true">→</span>
@@ -395,8 +403,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 overflow-x-clip px-6 pb-24 sm:px-8 sm:pb-32">
-          <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-8 py-14 sm:px-14 sm:py-20">
+        <section id="contact" className="scroll-mt-24 overflow-x-clip px-6 pb-[max(6rem,env(safe-area-inset-bottom))] sm:px-8 sm:pb-32">
+          <div className="mx-auto max-w-6xl overflow-hidden border border-accent/40 bg-surface px-6 py-12 sm:px-14 sm:py-20">
             <div className="relative z-10 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <div>
                 <LogoMark className="pointer-events-none absolute -right-6 -top-10 h-28 w-auto opacity-[0.12] sm:h-40 lg:hidden" />

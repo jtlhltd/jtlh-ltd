@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Syne } from "next/font/google";
 import "./globals.css";
 
@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#050505",
 };
 
 export default function RootLayout({
