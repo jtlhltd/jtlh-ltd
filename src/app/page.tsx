@@ -75,7 +75,7 @@ const differences = [
     body: "Design, build, host, and run. Your team uses the system; we keep it alive.",
   },
   {
-    title: "You get a working system, not a slide deck",
+    title: "You get working software, not recommendations",
     body: "We don’t stop at recommendations. The output is software your team can use, with us still looking after it.",
   },
 ];
