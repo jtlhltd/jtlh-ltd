@@ -25,6 +25,14 @@ export const metadata: Metadata = {
       "Audit, automate, and run AI systems inside your business — hosting included. First system live in 30 days.",
     type: "website",
     locale: "en_GB",
+    siteName: "JTLH LTD",
+    url: "https://jtlhltd.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JTLH LTD — Bespoke AI Systems Integration",
+    description:
+      "Audit, automate, and run AI systems inside your business — hosting included. First system live in 30 days.",
   },
 };
 
