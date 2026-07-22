@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Syne } from "next/font/google";
+import { SmoothAnchors } from "@/components/SmoothAnchors";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -50,7 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" className={`${outfit.variable} ${syne.variable} h-full`}>
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <SmoothAnchors />
+        {children}
+      </body>
     </html>
   );
 }
