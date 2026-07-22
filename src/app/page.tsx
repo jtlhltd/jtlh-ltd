@@ -226,11 +226,11 @@ export default function Home() {
 
         {/* Capability strip — ends cleanly after Document processing */}
         <div className="border-b border-line px-6 py-7 sm:px-8" aria-hidden="true">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:justify-between sm:gap-x-4">
+          <div className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-3 overflow-x-auto">
             {capabilities.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-3 font-display text-sm leading-6 font-semibold tracking-[0.14em] text-muted uppercase"
+                className="inline-flex shrink-0 items-center gap-2.5 font-display text-[0.7rem] leading-6 font-semibold tracking-[0.12em] text-muted uppercase sm:gap-3 sm:text-sm sm:tracking-[0.14em]"
               >
                 <span className="text-accent">◆</span>
                 {item}
