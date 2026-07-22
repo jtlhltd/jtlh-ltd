@@ -3,50 +3,87 @@
 import { useEffect } from "react";
 
 const HEADER_OFFSET = 96;
+const DURATION_MS = 750;
 
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let rafId = 0;
+
+function easeOutCubic(t: number) {
+  return 1 - (1 - t) ** 3;
 }
 
-function scrollToHash(hash: string) {
-  const id = hash.replace(/^#/, "");
-  if (!id) return;
+function animateScrollTo(top: number) {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const target = Math.max(0, top);
+  const scroller = document.scrollingElement ?? document.documentElement;
 
-  const target = document.getElementById(id);
-  if (!target) return;
+  if (reduced) {
+    scroller.scrollTop = target;
+    return;
+  }
 
-  const top =
-    target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  const start = scroller.scrollTop;
+  const delta = target - start;
+  if (Math.abs(delta) < 2) return;
 
-  window.scrollTo({
-    top: Math.max(0, top),
-    behavior: prefersReducedMotion() ? "auto" : "smooth",
-  });
+  if (rafId) cancelAnimationFrame(rafId);
+  const started = performance.now();
+
+  const tick = (now: number) => {
+    const progress = Math.min(1, (now - started) / DURATION_MS);
+    scroller.scrollTop = start + delta * easeOutCubic(progress);
+    if (progress < 1) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = 0;
+    }
+  };
+
+  rafId = requestAnimationFrame(tick);
+}
+
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return false;
+
+  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  animateScrollTo(top);
+  return true;
 }
 
 export function SmoothAnchors() {
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
+      if (event.defaultPrevented) return;
+      if (event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
       const target = event.target;
       if (!(target instanceof Element)) return;
 
-      const link = target.closest('a[href^="#"]');
+      const link = target.closest("a[href^='#']");
       if (!(link instanceof HTMLAnchorElement)) return;
-      if (link.target === "_blank" || link.hasAttribute("download")) return;
+      if (link.target && link.target !== "_self") return;
+      if (link.hasAttribute("download")) return;
 
-      const hash = link.getAttribute("href");
-      if (!hash || hash === "#") return;
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
 
-      const destination = document.getElementById(hash.slice(1));
-      if (!destination) return;
+      const id = decodeURIComponent(href.slice(1));
+      if (!document.getElementById(id)) return;
 
       event.preventDefault();
-      history.pushState(null, "", hash);
-      scrollToHash(hash);
+      event.stopPropagation();
+
+      if (window.location.hash !== href) {
+        history.pushState(null, "", href);
+      }
+
+      scrollToId(id);
     };
 
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    // Capture so we run before anything else can force an instant jump.
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
   }, []);
 
   return null;

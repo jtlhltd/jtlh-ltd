@@ -30,16 +30,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 6rem;
-  overflow-x: clip;
   scrollbar-gutter: stable;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 body {
