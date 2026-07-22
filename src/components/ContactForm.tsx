@@ -120,7 +120,7 @@ export function ContactForm() {
           maxLength={5000}
           rows={5}
           className="field resize-y"
-          placeholder="What bottleneck should we look at first?"
+          placeholder="What’s stuck in the business that we should look at first?"
         />
       </div>
 

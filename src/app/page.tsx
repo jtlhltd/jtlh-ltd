@@ -9,14 +9,13 @@ const EMAIL = "jtlhltd@gmail.com";
 const snapshot = [
   { label: "Model", value: "Audit → Build → Run" },
   { label: "First system", value: "Live in 30 days" },
-  { label: "Ownership", value: "We host & operate" },
-  { label: "Fit", value: "Concrete bottlenecks" },
+  { label: "Delivery", value: "We host and run" },
 ];
 
 const problems = [
   {
     title: "Work still runs on people",
-    body: "The same emails, admin, follow-ups, and lookups get done by hand every day — so growth just means more firefighting.",
+    body: "The same emails, admin, follow-ups, and lookups get done by hand every day, so growth just means more juggling.",
   },
   {
     title: "Tools don’t talk to each other",
@@ -24,7 +23,7 @@ const problems = [
   },
   {
     title: "Off-the-shelf AI doesn’t fit",
-    body: "Generic chatbots and plugins ignore how your business actually operates. DIY projects stall before they reach production.",
+    body: "Generic chatbots and plugins ignore how your business actually works. DIY projects stall before anything goes live.",
   },
 ];
 
@@ -54,11 +53,11 @@ const buildExamples = [
 const process = [
   {
     title: "Audit",
-    body: "We map how work actually runs — tools, handoffs, and where time leaks — then lock written scope and success metrics with you.",
+    body: "We map how work actually runs — tools, handoffs, and where time leaks.",
   },
   {
     title: "Build & integrate",
-    body: "We ship the first agreed system into your stack: connected to your data and usable by your team for the job we scoped.",
+    body: "We ship the first agreed system into your stack: connected to your data and usable by your team.",
   },
   {
     title: "Host & run",
@@ -66,35 +65,17 @@ const process = [
   },
 ];
 
-const timeline = [
-  {
-    label: "Week 1",
-    title: "Audit & scope lock",
-    body: "Access, walkthroughs, written scope for system one, and the metric that proves it worked.",
-  },
-  {
-    label: "Weeks 2–4",
-    title: "Build to production",
-    body: "Design, integrate, test with real data, and put the first system live for your team to use.",
-  },
-  {
-    label: "Ongoing",
-    title: "Run & expand",
-    body: "Monitoring, fixes, and the next bottleneck — so the operation gets more systemised over time.",
-  },
-];
-
 const differences = [
   {
     title: "We build real software",
-    body: "Production apps and integrations on a serious stack — not no-code glue that falls over when the business gets busy.",
+    body: "Live apps and integrations on a serious stack — not no-code glue that falls over when the business gets busy.",
   },
   {
     title: "We own it end-to-end",
     body: "Design, build, host, and run. Your team uses the system; we keep it alive. No half-finished handoff.",
   },
   {
-    title: "We start with one bottleneck",
+    title: "We start with one clear problem",
     body: "One agreed system first, measured, live. Then we expand. No multi-year transformation theatre.",
   },
 ];
@@ -106,7 +87,7 @@ const contrast = [
   },
   {
     them: "Chatbot demos that never leave staging",
-    us: "Production in your real stack",
+    us: "Live in your real stack",
   },
   {
     them: "Tools dumped on your team to maintain",
@@ -114,7 +95,7 @@ const contrast = [
   },
   {
     them: "Vague transformation retainers",
-    us: "One scoped bottleneck at a time",
+    us: "One scoped system at a time",
   },
 ];
 
@@ -127,7 +108,7 @@ const fitPoints = [
 const faqs = [
   {
     q: "What kinds of businesses do you work with?",
-    a: "Industry-agnostic. Fit is operational: you have real tools and repeatable work that software and AI can take over. If there isn’t something concrete to build or integrate, we won’t take it on.",
+    a: "Mostly UK businesses, across industries. Fit is operational: you have real tools and repeatable work that software and AI can take over. If there isn’t something concrete to build or integrate, we won’t take it on.",
   },
   {
     q: "Do you just advise, or do you build?",
@@ -139,7 +120,7 @@ const faqs = [
   },
   {
     q: "Who hosts and maintains the systems?",
-    a: "We do. Hosting is included in the engagement. We monitor, fix, and improve — then expand into the next bottleneck once the first system is solid.",
+    a: "We do. Hosting is included in the engagement. We monitor, fix, and improve — then expand into the next system once the first one is solid.",
   },
   {
     q: "Will this replace our existing tools?",
@@ -171,9 +152,9 @@ export default function Home() {
               Bespoke AI systems, built into your business.
             </h1>
 
-            <p className="animate-rise-delay-1 mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              We audit your operation, build the automations, then host and run
-              them — so manual work leaves your team and the system keeps running.
+            <p className="animate-rise-delay-1 mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              We audit your business, build the automations, then host and run
+              them so manual work leaves your team and the system keeps running.
             </p>
 
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
@@ -199,15 +180,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Snapshot strip — AI-Native “key facts” pattern */}
+        {/* Snapshot strip */}
         <section aria-label="Engagement snapshot" className="border-y border-line bg-surface/60">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px sm:grid-cols-4">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-3">
             {snapshot.map((item) => (
-              <div key={item.label} className="px-6 py-7 sm:px-8 sm:py-9">
-                <p className="font-display text-[0.65rem] font-semibold tracking-[0.18em] text-muted uppercase">
+              <div
+                key={item.label}
+                className="flex flex-col items-center justify-center px-6 py-10 text-center sm:px-8 sm:py-12"
+              >
+                <p className="font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase">
                   {item.label}
                 </p>
-                <p className="font-display mt-2 text-base font-semibold tracking-tight text-foreground sm:text-lg">
+                <p className="font-display mt-3 text-lg font-semibold tracking-tight text-foreground sm:text-xl">
                   {item.value}
                 </p>
               </div>
@@ -221,11 +205,11 @@ export default function Home() {
               The problem
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              Most businesses aren’t systemised — they’re held together by people.
+              Most businesses aren’t systemised. They’re held together by people.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               That’s fine until volume rises. Then the same work multiplies, hiring
-              becomes the only lever, and founders stay stuck in the weeds.
+              becomes the only lever, and owners stay stuck in the weeds.
             </p>
 
             <ul className="mt-14 grid gap-10 border-t border-line pt-12 sm:grid-cols-3 sm:gap-8">
@@ -243,11 +227,9 @@ export default function Home() {
         </section>
 
         <CtaBand
-          eyebrow="Next step"
-          title="Got a bottleneck you can point at?"
-          body="If the work is repeatable and stuck in people, inboxes, or spreadsheets, we can usually systemise it."
-          secondaryHref="#systems"
-          secondaryLabel="Browse systems"
+          eyebrow="Does this sound familiar?"
+          title="These are the problems we fix."
+          body="If work is stuck in people, inboxes, or spreadsheets, we can help. We build the systems that take that load off your team."
         />
 
         <section id="what-we-do" className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-8 sm:py-28">
@@ -256,13 +238,13 @@ export default function Home() {
               What we do
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              Bespoke AI systems integration — end to end.
+              Bespoke AI systems integration, end to end.
             </h2>
             <div className="mt-5 grid max-w-4xl gap-4 text-base leading-relaxed text-muted sm:text-lg">
               <p>
-                JTLH LTD goes into businesses and builds AI around how you already
-                operate. Email automation, knowledge and reporting, CRM layers,
-                internal tools, custom apps — whatever the bottleneck needs.
+                We go into businesses and build AI around how you already work.
+                Email automation, knowledge and reporting, CRM layers, internal
+                tools, custom apps — whatever your business needs.
               </p>
               <p>
                 If the work is repeatable and fixable with software and AI, we take
@@ -270,14 +252,14 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Us vs them — AI-Native contrast layout */}
+            {/* Us vs them */}
             <div className="mt-14 overflow-hidden border border-line">
               <div className="grid border-b border-line bg-surface sm:grid-cols-2">
                 <p className="border-b border-line px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase sm:border-r sm:border-b-0">
                   Typical AI pitch
                 </p>
                 <p className="px-6 py-4 font-display text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-                  JTLH engagement
+                  Our Approach
                 </p>
               </div>
               {contrast.map((row) => (
@@ -301,25 +283,8 @@ export default function Home() {
               Systems
             </p>
             <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-              Whatever your bottleneck needs.
+              Whatever your business needs.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Scope is locked after the audit. Jump to a system type, or scroll the
-              catalogue — each one is tailored to your workflows, not a template.
-            </p>
-
-            {/* Catalogue jump links — Makematic product map */}
-            <div className="mt-10 flex flex-wrap gap-3">
-              {buildExamples.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#system-${item.id}`}
-                  className="border border-line px-4 py-2 font-display text-xs font-semibold tracking-[0.12em] text-muted uppercase transition-colors hover:border-accent/50 hover:text-accent"
-                >
-                  {item.title}
-                </a>
-              ))}
-            </div>
 
             <ul className="mt-14 space-y-0 border-t border-line">
               {buildExamples.map((item, index) => (
@@ -355,7 +320,7 @@ export default function Home() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               Three phases. Setup is included. Month one covers the audit and your
-              first live system — then we keep expanding.
+              first live system, then we keep expanding.
             </p>
 
             {/* Numbered phase rail */}
@@ -377,35 +342,6 @@ export default function Home() {
                 </li>
               ))}
             </ol>
-
-            <div className="mt-16 border-t border-line pt-14">
-              <p className="font-display text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                First 30 days
-              </p>
-              <h3 className="font-display mt-4 max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
-                From kickoff to a system your team can use.
-              </h3>
-              <ul className="mt-10 space-y-0 border-t border-line">
-                {timeline.map((item) => (
-                  <li
-                    key={item.label}
-                    className="grid gap-2 border-b border-line py-7 sm:grid-cols-[8rem_1fr] sm:gap-10"
-                  >
-                    <p className="font-display text-sm tracking-[0.12em] text-accent uppercase">
-                      {item.label}
-                    </p>
-                    <div>
-                      <h4 className="font-display text-lg font-semibold tracking-tight">
-                        {item.title}
-                      </h4>
-                      <p className="mt-2 text-base leading-relaxed text-muted">
-                        {item.body}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </section>
 
@@ -437,7 +373,7 @@ export default function Home() {
                 Guarantee
               </p>
               <h2 className="font-display mt-4 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-                First system live in 30 days — or month one back.
+                First system live in 30 days, or month one back.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
                 After kickoff and scope lock, your first agreed AI system goes live
@@ -494,7 +430,7 @@ export default function Home() {
         <CtaBand
           eyebrow="Ready"
           title="Tell us where the work is stuck."
-          body="Share the bottleneck. We’ll reply with whether it’s a fit and what a first system could look like."
+          body="Share what’s holding the business back. We’ll reply with whether it’s a fit and what a first system could look like."
           primaryLabel="Go to contact form"
           secondaryHref="#faq"
           secondaryLabel="Read the FAQ"
@@ -509,7 +445,7 @@ export default function Home() {
                   Contact
                 </p>
                 <h2 className="font-display mt-4 max-w-xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-                  Send the bottleneck.
+                  Tell us what’s stuck.
                 </h2>
                 <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
                   Email, reporting, CRM, ops, or something unique to your business.
@@ -545,7 +481,7 @@ export default function Home() {
           <div className="text-sm text-muted">
             <Logo className="text-base text-foreground" />
             <p className="mt-3 max-w-sm">
-              Bespoke AI systems integration — audit, build, host, and run.
+              Bespoke AI systems integration. Audit, build, host, and run.
             </p>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
